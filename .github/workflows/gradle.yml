@@ -29,11 +29,3 @@ jobs:
       # Gradle test를 실행한다
       - name: Test with Gradle
         run: ./gradlew --info test
-
-      # 테스트 후 Result를 보기위해 Publish Unit Test Results step 추가
-      - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1
-        if: ${{ always() }}  # 테스트가 실패하여도 Report를 보기 위해 `always`로 설정
-        with:
-          token: ${{ secrets.TOKEN20240113 }}  # YOUR_GITHUB_TOKEN을 실제 토큰 이름으로 변경
-          files: build/test-results/**/*.xml
