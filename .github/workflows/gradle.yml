@@ -30,14 +30,3 @@ jobs:
       - name: Test with Gradle
         run: ./gradlew --info test
 
-      # 토큰을 환경 변수로 설정한다.
-      - name: Set Token as Environment Variable
-        run: echo "GITHUB_TOKEN=${{ secrets.TOKEN20240113 }}" >> $GITHUB_ENV
-
-      # 테스트 후 Result를 보기위해 Publish Unit Test Results step 추가
-      - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1
-        if: ${{ always() }}  # 테스트가 실패하여도 Report를 보기 위해 `always`로 설정
-        with:
-          github_token: ${{ env.GITHUB_TOKEN }}  # 새로 생성한 토큰을 사용
-          files: build/test-results/**/*.xml
