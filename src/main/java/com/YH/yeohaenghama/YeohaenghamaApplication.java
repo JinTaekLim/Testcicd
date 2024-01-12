@@ -1,13 +1,13 @@
-package jaegojaego.back.web;
+package com.YH.yeohaenghama;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class Application {
+public class YeohaenghamaApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(Application.class, args);
+		SpringApplication.run(YeohaenghamaApplication.class, args);
 	}
 
 }

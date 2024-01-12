@@ -1,10 +1,10 @@
-package jaegojaego.back.web;
+package com.YH.yeohaenghama;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ApplicationTests {
+class YeohaenghamaApplicationTests {
 
 	@Test
 	void contextLoads() {
