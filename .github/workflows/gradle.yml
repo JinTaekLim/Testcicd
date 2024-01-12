@@ -32,7 +32,7 @@ jobs:
 
       # 토큰을 환경 변수로 설정한다.
       - name: Set Token as Environment Variable
-        run: echo "TOKEN=${{ secrets.Token20240113 }}" >> $GITHUB_ENV
+        run: echo "TOKEN=${{ secrets.TOKEN20240113 }}" >> $GITHUB_ENV
 
       # 테스트 후 Result를 보기위해 Publish Unit Test Results step 추가
       - name: Publish Unit Test Results
