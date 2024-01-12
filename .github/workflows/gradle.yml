@@ -25,13 +25,11 @@ jobs:
         with:
           arguments: build
 
-      - name: 테스트 결과 Report
-        uses: EnricoMi/publish-unit-test-result-action@v2
-        if: always()
+
+
+            # 테스트 후 Result를 보기위해 Publish Unit Test Results step 추가
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: ${{ always() }}  # 테스트가 실패하여도 Report를 보기 위해 `always`로 설정
         with:
-          files: 'build/test-results/**/*.xml'
-      - name: 테스트 실패 Comment
-        uses: mikepenz/action-junit-report@v3
-        if: always()
-        with:
-          report_paths: 'build/test-results/test/TEST-*.xml'
+          files: build/test-results/**/*.xml
